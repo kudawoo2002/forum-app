@@ -1,0 +1,23 @@
+{% extends 'partials/base.html' %} {% block title %}Home{% endblock title%}
+{%block body %}
+<main class="">
+  <p class="main-header">Here we share knowledge</p>
+  <section class="forum-category grid-col-3">
+    {% for category in categories %}
+    <div class="main-section">
+      <div class="category-image-div">
+        <a href="{% url 'forum-category' category.pk %}"
+          ><img src="{{ category.image.url}}" alt="" class="category-img"
+        /></a>
+      </div>
+      <div class="main-containt">
+        <p class="category-title">{{category.Category_name}}</p>
+        <p class="category-text">
+          Number of article: {{category.Category_name.count}}
+        </p>
+      </div>
+    </div>
+    {% endfor %}
+  </section>
+</main>
+{% endblock body %}
