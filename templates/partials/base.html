@@ -15,14 +15,26 @@
           <li class="navbar-lists">
             <a href="{% url 'home' %}" class="navbar-link">Home</a>
           </li>
+
+          {% if user.is_authenticated %}
+          <span>Welcome {{request.user.first_name}}</span>
+          <br />
+          <span>{{weather}}</span>
+          <li class="navbar-lists">
+            <a href="{% url 'logout' %}" class="navbar-link">Logout</a>
+          </li>
+          {% else%}
           <li class="navbar-lists"><a href="" class="navbar-link">About</a></li>
           <li class="navbar-lists">
             <a href="" class="navbar-link">Contact</a>
           </li>
-          <li class="navbar-lists"><a href="" class="navbar-link">Login</a></li>
+          <li class="navbar-lists">
+            <a href="{% url 'login' %}" class="navbar-link">Login</a>
+          </li>
           <li class="navbar-lists">
             <a href="{% url 'register' %}" class="navbar-link">Sign Up</a>
           </li>
+          {% endif %}
         </ul>
       </nav>
     </header>

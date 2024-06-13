@@ -8,6 +8,8 @@
   <h2 class="forum-detail-header">{{ forum_detail.title}}</h2>
 
   <p class="forum-detail-containt">{{ forum_detail.description}}</p>
-  <span class="forum-author">Published by NASA</span>
+  <span class="forum-author"
+    >Published by NASA {{forum_detail.created_date}}</span
+  >
 </div>
 {% endblock body%}

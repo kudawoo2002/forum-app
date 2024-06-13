@@ -10,7 +10,7 @@ class User(AbstractUser):
     last_name = models.CharField(max_length=100)
     is_staff = models.BooleanField(default=False)
     is_superuser = models.BooleanField(default=False)
-    date_of_birth = models.DateField(verbose_name='Date of birth')
+    dob = models.DateField()
     city = models.CharField(verbose_name='city', max_length=200)
     country = CountryField(blank=True)
     address = models.CharField(max_length=200, blank=True)
