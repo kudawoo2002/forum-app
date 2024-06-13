@@ -27,20 +27,8 @@ def login_view(request):
         password = request.POST.get("password")
         user = authenticate(request, username=username, password=password)
         if user is not None:
-            weather = ""    
-            api_key = "a71b7607817b263c56b4d69a7f4b5cd9"
-            
             login(request, user)
-            response = requests.get(f"https://api.openweathermap.org/data/2.5/weather?q={user.city}&appid=a71b7607817b263c56b4d69a7f4b5cd9")
-            data = response.json()
-            print(data)
-            weather = data["weather"][0]['main']
-            
-            print(user.city)
             return redirect("home")
-        else:
-            print("invalide")
-    print(weather)
     context = {
         'weather': weather,
     }
