@@ -3,7 +3,10 @@
 <main class="">
   <p class="main-header">
     Dashboard,
-    <span class="dashboard-temp">&{{weather}}; {{temp | floatformat:2}}°C</span>
+    <span class="dashboard-temp"
+      >Welcome {{ request.user.first_name}} &{{weather}};
+      {{temp|floatformat:2}}°C</span
+    >
   </p>
   <section class="forum-category grid-col-3">
     <div class="main-section">
