@@ -1,0 +1,16 @@
+{% extends 'partials/base.html' %} {% block title %}Dashboard{% endblock title%}
+{%block body %}
+<main class="">
+  <p class="main-header">
+    Dashboard,
+    <span class="dashboard-temp">&{{weather}}; {{temp | floatformat:2}}°C</span>
+  </p>
+  <section class="forum-category grid-col-3">
+    <div class="main-section">
+      <div class="main-containt">
+        <p class="category-title">Today Weather</p>
+      </div>
+    </div>
+  </section>
+</main>
+{% endblock body %}

@@ -279,3 +279,10 @@ header {
   color: #2b2d42;
 }
 /* End login */
+
+/* START DASHBOARD */
+.dashboard-temp {
+  font-size: 2rem;
+  color: #ef233c;
+}
+/* END DASHBOARD */

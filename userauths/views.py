@@ -2,7 +2,29 @@ from django.shortcuts import render, redirect
 from .forms import UserRegisterForm
 from django.contrib.auth import login, logout, authenticate
 import requests
+from decouple import config
 # Create your views here.
+
+def dashboard(request):
+    list_weather = {
+        "Rain":"#127783",
+        "Clouds": "#127783",
+        "Clear":"#127780",
+        "Sun":"#127781"
+    }
+    city_name = request.user.city
+    api_key = config("weather_API_KEY")
+    url = f"https://api.openweathermap.org/data/2.5/weather?q={city_name}&appid={api_key}"
+    response = requests.get(url)
+    data = response.json()
+    weather = list_weather[data["weather"][0]["main"]]
+    temp = data["main"]['temp'] / 10
+
+    context = {
+        'weather': weather,
+        'temp':temp
+    }
+    return render(request, 'dashboard.html', context)
 
 def register_view(request):
     form = UserRegisterForm()
