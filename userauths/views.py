@@ -21,16 +21,16 @@ def register_view(request):
 
 
 def login_view(request):
-    weather = ""
     if request.method == "POST":
         username = request.POST.get("username")
         password = request.POST.get("password")
         user = authenticate(request, username=username, password=password)
-        if user is not None:
+        if user is not None: 
             login(request, user)
-            return redirect("home")
+            return redirect("dashboard")
+      
     context = {
-        'weather': weather,
+       
     }
     
     return render(request, template_name='login.html', context=context)
