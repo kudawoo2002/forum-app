@@ -1,39 +1,40 @@
 {% extends 'partials/base.html' %} {%block body %}
 
 <div class="container-form">
+  <h1>Sign Up</h1>
   <div class="form-box">
-    <h1>Sign Up</h1>
     <form action="" method="post">
       {% csrf_token%}
       <div class="form-group">
         <div class="form-control">
           <div class="input-field">{{form.first_name }}</div>
           <div class="input-field">{{form.last_name}}</div>
-          <div class="input-field">{{form.username}}</div>
         </div>
 
         <div class="form-control">
+          <div class="input-field">{{form.username}}</div>
           <div class="input-field">{{form.email}}</div>
+        </div>
+
+        <div class="form-control">
           <div class="input-field">{{form.password1}}</div>
           <div class="input-field">{{form.password2}}</div>
         </div>
-
         <div class="form-control">
           <div class="input-field">{{form.city}}</div>
           <div class="input-field">{{form.country}}</div>
-          <div class="input-field">{{form.dob}}</div>
         </div>
-        <div class="form-control" id="last-input">
+        <div class="form-control">
+          <div class="input-field">{{form.dob}}</div>
           <div class="input-field">{{form.address}}</div>
         </div>
-        <div class="form-control">
-          <div class="input-field">
-            <button class="btn">Register</button>
-          </div>
+        <div class="input-field">
+          <button class="btn">Register</button>
         </div>
-        <div class="form-control">{{ form.errors}}</div>
         <div class="form-control">
-          <p>If you are already register, <a href="">Login</a></p>
+          <p>
+            If you are already register, <a href="{% url 'login' %}">Login</a>
+          </p>
         </div>
       </div>
     </form>
@@ -48,6 +49,6 @@
   inputFields[5].placeholder = "Enter Password";
   inputFields[6].placeholder = "Confirm Password";
   inputFields[7].placeholder = "City";
-  inputFields[8].placeholder = "Address";
+  inputFields[9].placeholder = "Address";
 </script>
 {% endblock body%}

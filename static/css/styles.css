@@ -18,7 +18,9 @@ html {
 body {
   height: 100vh;
 }
-
+.container {
+  height: 100vh;
+}
 header {
   position: fixed;
   top: 0;
@@ -75,7 +77,6 @@ header {
   margin-top: 20%;
   justify-items: center;
   align-items: center;
-
   margin-left: 10%;
 }
 
@@ -177,21 +178,21 @@ header {
 /* Register css */
 
 .container-form {
+  margin-top: 12%;
   width: 100%;
   height: 100vh;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
 }
 
 .form-box {
-  margin-top: 10%;
   width: 130rem;
   /* height: 50%; */
   border-radius: 4rem;
   box-shadow: 0rem 3rem 6rem rgba(0, 0, 0, 0.1);
-  background-color: #ef233c;
 }
 
 .form-group {
@@ -200,12 +201,11 @@ header {
   margin: 4rem;
 }
 
-.form-box h1 {
-  font-size: 6rem;
-  color: #fff;
+.container-form h1 {
+  font-size: 4rem;
+  color: #8d99ae;
   font-weight: bold;
-  margin: 4rem 0;
-  position: relative;
+  margin-bottom: 4rem;
 }
 
 .form-box h1::after {
@@ -225,11 +225,22 @@ header {
 }
 
 .input-field input {
+  width: 32rem;
   outline: none;
   border: 0.15rem solid #aaa;
   padding: 2rem 4rem;
   border-radius: 2rem;
   box-shadow: 1rem 2rem 4rem rgba(0, 0, 0, 0.1);
+}
+
+.input-field select {
+  width: 32rem;
+  outline: none;
+  border: 0.15rem solid #aaa;
+  padding: 2rem 4rem;
+  border-radius: 2rem;
+  box-shadow: 1rem 2rem 4rem rgba(0, 0, 0, 0.1);
+  background: #fff;
 }
 
 /* .input-field input:focus:valid {
@@ -248,6 +259,7 @@ header {
 }
 
 .input-field .btn {
+  width: 80rem;
   outline: none;
   border: none;
   background: #ef233c;
@@ -266,17 +278,67 @@ header {
   transform: translateY(-0.3rem);
 }
 
+.form-control p {
+  font-size: 2rem;
+  color: #2b2d42;
+}
+
+.form-control a {
+  text-decoration: none;
+  color: #ef233c;
+}
+
 /* End Register css */
 
 /* Login form */
 .login-container {
   margin-top: 10%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .login-header {
   text-align: center;
   font-size: 4rem;
   color: #2b2d42;
+  margin-bottom: 4rem;
+}
+
+.login-wrapper {
+  width: 80rem;
+  box-shadow: 1rem 2rem 4rem rgba(0, 0, 0, 0.1);
+
+  margin-bottom: 8rem;
+}
+.form-control .login-btn {
+  outline: none;
+  border: none;
+  background: #ef233c;
+  color: #fff;
+  padding: 2rem 8rem;
+  font-size: 3rem;
+  font-weight: bold;
+  border-radius: 4rem;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.input-field .btn:hover {
+  background: #f04156;
+  color: #fff;
+  transform: translateY(-0.3rem);
+}
+
+.form-control input {
+  width: 32rem;
+  outline: none;
+  border: 0.15rem solid #aaa;
+  padding: 2rem 4rem;
+  border-radius: 2rem;
+  box-shadow: 1rem 2rem 4rem rgba(0, 0, 0, 0.1);
 }
 /* End login */
 
@@ -286,3 +348,22 @@ header {
   color: #ef233c;
 }
 /* END DASHBOARD */
+
+/* START FOOTER */
+footer {
+  height: 8rem;
+  width: 100%;
+  background: #ef233c;
+  position: fixed;
+  bottom: 0%;
+}
+
+footer p {
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 4rem;
+}
+
+/* END FOOTER */

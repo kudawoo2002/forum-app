@@ -1,7 +1,7 @@
 {% extends 'partials/base.html' %}{%block body %}
 <div class="login-container">
-  <div class="login-wrpper">
-    <h1 class="login-header">Login</h1>
+  <h1 class="login-header">Login</h1>
+  <div class="login-wrapper">
     <form action="" method="post">
       {% csrf_token%}
       <div class="form-control">
@@ -19,7 +19,7 @@
         />
       </div>
       <div class="form-control">
-        <button>Login</button>
+        <button class="login-btn">Login</button>
       </div>
     </form>
   </div>
